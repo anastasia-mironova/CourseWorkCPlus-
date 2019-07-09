@@ -1,0 +1,22 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit6H
+#define Unit6H
+//---------------------------------------------------------------------------
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+//---------------------------------------------------------------------------
+class TnewPassword : public TForm
+{
+__published:	// IDE-managed Components
+        TEdit *pas;
+private:	// User declarations
+public:		// User declarations
+        __fastcall TnewPassword(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TnewPassword *newPassword;
+//---------------------------------------------------------------------------
+#endif

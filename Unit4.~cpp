@@ -1,0 +1,72 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit4.h"
+#include "MainUnit.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+
+
+
+TeditForm *editForm;
+//---------------------------------------------------------------------------
+__fastcall TeditForm::TeditForm(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TeditForm::FormShow(TObject *Sender)
+{
+
+
+   buf = MainForm->buf;
+  ComboBox1->ItemIndex = buf;
+
+  Label20->Visible = true;
+  Label21->Visible = true;
+  Label22->Visible = true;
+
+  switch(ComboBox1->ItemIndex){
+  case 0:Label20->Caption = "Автоочищение";
+         Label21->Caption = "Кофемолка";
+         Label22->Caption = "Тип нагревателя";
+
+         break;
+  case 1: Label20->Caption = "Расход воды";
+         Label21->Caption = "Сушка";
+         Label22->Caption = "Тип загрузки";
+
+         break;
+  case 2:Label20->Caption = "Количество камер";
+         Label21->Caption = "Разморозка";
+         Label22->Caption = " Количество дверей";
+
+         break;
+  case 3:Label20->Caption = "Скорость вращения";
+         Label21->Caption = "Индикатор уровня сока";
+         Label22->Caption = "Противокапельная система";
+
+         break;
+  case 4:Label20->Caption = "Гриль";
+         Label21->Caption = "Открывание дверцы";
+         Label22->Caption = "Мощность микроволновки";
+
+         break;
+  case 5:Label20->Caption = "Число комфорок";
+         Label21->Caption = "Конвекция";
+         Label22->Caption = "Варочная панель";
+
+         break;
+
+          };
+}
+//---------------------------------------------------------------------------
+
+
+
+

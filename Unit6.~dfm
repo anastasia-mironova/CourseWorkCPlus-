@@ -1,0 +1,30 @@
+object newPassword: TnewPassword
+  Left = 192
+  Top = 117
+  Width = 244
+  Height = 112
+  Caption = 'newPassword'
+  Color = clWindow
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object TLabel
+    Left = 48
+    Top = 16
+    Width = 73
+    Height = 13
+    Caption = #1053#1086#1074#1099#1081' '#1087#1072#1088#1086#1083#1100
+  end
+  object pas: TEdit
+    Left = 48
+    Top = 40
+    Width = 121
+    Height = 21
+    TabOrder = 0
+  end
+end

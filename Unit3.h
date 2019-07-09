@@ -1,0 +1,49 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit3H
+#define Unit3H
+//---------------------------------------------------------------------------
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include "MainUnit.h"
+#include <Grids.hpp>
+#include <ExtCtrls.hpp>
+//---------------------------------------------------------------------------
+class TsearchForm : public TForm
+{
+__published:	// IDE-managed Components
+        TEdit *cost;
+        TEdit *manf;
+        TEdit *date;
+        TStringGrid *allDevice;
+        TButton *saearchBtn;
+        TButton *cancelBtn;
+        TRadioGroup *RadioGroup1;
+        TLabel *Label1;
+        TEdit *costMax;
+        TEdit *dateMax;
+        TLabel *Label2;
+        TLabel *Label3;
+        TComboBox *typeDevice;
+        TRadioGroup *rgType;
+        TLabel *Label4;
+        TLabel *Label5;
+        void __fastcall FormCreate(TObject *Sender);
+        void __fastcall cancelBtnClick(TObject *Sender);
+        void __fastcall saearchBtnClick(TObject *Sender);
+        void  __fastcall sgClear();
+        void __fastcall RadioGroup1Click(TObject *Sender);
+        void __fastcall rgTypeClick(TObject *Sender);
+        void __fastcall FormShow(TObject *Sender);
+        void __fastcall costKeyPress(TObject *Sender, char &Key);
+private:	// User declarations
+public:		// User declarations
+        __fastcall TsearchForm(TComponent* Owner);
+        int flag;
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TsearchForm *searchForm;
+//---------------------------------------------------------------------------
+#endif

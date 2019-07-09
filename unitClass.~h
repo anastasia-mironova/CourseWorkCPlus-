@@ -1,0 +1,327 @@
+//---------------------------------------------------------------------------
+
+#ifndef unitClassH
+#define unitClassH
+#include   <vcl.h>
+
+//---------------------------------------------------------------------------
+class Product {
+        protected:
+            AnsiString cost;
+            AnsiString manufacturer;
+            AnsiString name;
+            AnsiString type ;
+            AnsiString quantity ;
+        public:
+
+            Product(AnsiString _cost, AnsiString _manufacturer, AnsiString _name, AnsiString _type, AnsiString _quantity);
+
+             virtual AnsiString getCost();
+
+            virtual AnsiString getManufacturer();
+
+            virtual AnsiString  getName();
+
+            virtual AnsiString  getType();
+
+            virtual AnsiString getQuantity();
+
+            virtual void setCost(AnsiString _cost);
+
+            virtual  void setManufacturer(AnsiString _manufacturer);
+
+            virtual void setName(AnsiString _name);
+
+            virtual void setType(AnsiString _type);
+
+            virtual void setQuantity(AnsiString _quantity);
+
+
+};
+
+
+
+class Device : public Product{
+     protected:
+        AnsiString date;
+        AnsiString seria,model,size,material;
+     public:
+            
+            Device(AnsiString _date, AnsiString _seria, AnsiString _model, AnsiString _size, AnsiString _material,
+            AnsiString _cost, AnsiString _manufacturer, AnsiString _name, AnsiString _type, AnsiString _quantity);
+
+
+            virtual AnsiString getDate();
+
+            virtual AnsiString getSeria();
+
+            virtual AnsiString  getModel();
+
+            virtual AnsiString  getSize();
+
+            virtual AnsiString getMaterial();
+
+            virtual void setDate(AnsiString _date);
+
+            virtual void setSeria(AnsiString _seria);
+
+            virtual void setModel(AnsiString _model);
+
+            virtual void setSize(AnsiString _size);
+
+            virtual void setMaterial(AnsiString _material);
+
+
+
+};
+
+class ElectroDevice : Device{
+        protected:
+          AnsiString voltage;
+          AnsiString power;
+           AnsiString current;
+          AnsiString efficiencyClass;
+          AnsiString controlType;
+        public:
+                ElectroDevice(AnsiString _voltage, AnsiString _power, AnsiString _current,
+                AnsiString _efficiencyClass, AnsiString _controlType,
+                AnsiString _date, AnsiString _seria, AnsiString _model, AnsiString _size, AnsiString _material,AnsiString _cost,
+                AnsiString _manufacturer, AnsiString _name, AnsiString _type, AnsiString _quantity);
+
+                  AnsiString getVoltage();
+                 AnsiString getPower();
+                 AnsiString getCurrent();
+                 AnsiString getEfficiencyClass();
+                 AnsiString getControlType();
+
+                 void setVoltage(AnsiString _voltage);
+                 void setPower(AnsiString _power);
+                 void setCurrent(AnsiString _current);
+                 void setEfficiencyClass(AnsiString _efficiencyClass);
+                 void setControlType(AnsiString _controlType);
+
+
+
+      AnsiString getCost();
+        AnsiString getManufacturer() ;
+        AnsiString getName() ;
+         AnsiString getType() ;
+         AnsiString getQuantity() ;
+         AnsiString getDate() ;
+         AnsiString getSeria() ;
+         AnsiString getModel() ;
+         AnsiString getSize() ;
+         AnsiString getMaterial() ;
+
+         void setCost(AnsiString _cost) ;
+         void setManufacturer(AnsiString _manufacturer);
+         void setName(AnsiString _name) ;
+         void setType(AnsiString _type) ;
+         void setQuantity(AnsiString _quantity );
+         void setDate(AnsiString _date) ;
+         void setSeria(AnsiString _seria) ;
+         void setModel(AnsiString _model) ;
+         void setSize(AnsiString _size) ;
+         void setMaterial(AnsiString _material) ;
+
+
+};
+class HouseholdAppliance : public ElectroDevice{
+       protected:
+                AnsiString additionalCommunication;
+                AnsiString numberProgram;
+                AnsiString  portability;
+       public:
+            
+            HouseholdAppliance(AnsiString _additionalCommunication, AnsiString _numberProgram, AnsiString  _portability,
+            AnsiString _voltage, AnsiString _power, AnsiString _current, AnsiString _efficiencyClass, AnsiString _controlType,
+                AnsiString _date, AnsiString _seria, AnsiString _model, AnsiString _size, AnsiString _material,AnsiString _cost,
+                AnsiString _manufacturer, AnsiString _name, AnsiString _type, AnsiString _quantity);
+
+             AnsiString getAdditionalCommunication();
+             AnsiString getNumberProgram();
+             AnsiString  getPortability();
+
+             void setAdditionalCommunication(AnsiString _additionalCommunication);
+             void setNumberProgram(AnsiString _numberProgram);
+             void  setPortability(AnsiString  _portability);
+
+
+
+};
+
+
+
+class CoffeeMachine : public HouseholdAppliance{
+   protected:
+         AnsiString autoCleaning;
+         AnsiString grinder;
+         AnsiString heater;
+   public:
+
+         CoffeeMachine(AnsiString _cost,
+                AnsiString _manufacturer, AnsiString _name, AnsiString _type, AnsiString _quantity, AnsiString _date,
+                AnsiString _seria,
+                 AnsiString _model, AnsiString _size, AnsiString _material,AnsiString _voltage, AnsiString _power, AnsiString _current,
+                 AnsiString _efficiencyClass,
+                 AnsiString _controlType,  AnsiString _additionalCommunication,AnsiString _numberProgram, AnsiString  _portability,
+                AnsiString _autoCleaning,AnsiString _grinder,AnsiString _heater);
+         CoffeeMachine& operator =(const CoffeeMachine &other);
+         AnsiString getAutoCleaning();
+         AnsiString getGrinder();
+         AnsiString getHeater();
+         void setAutoCleaning(AnsiString _autoCleaning);
+         void setGrinder(AnsiString _grinder);
+         void setHeater(AnsiString _heater);
+         void setDifferentProp(AnsiString _autoCleaning,AnsiString _grinder,AnsiString _heater);
+         AnsiString* Arr(int flag);
+};
+
+class DishWasher : public HouseholdAppliance{
+   protected:
+         AnsiString waterConsumtion;
+         AnsiString drying;
+         AnsiString loadingType;
+   public:
+         DishWasher(AnsiString _cost,
+                AnsiString _manufacturer, AnsiString _name, AnsiString _type, AnsiString _quantity, AnsiString _date,
+                AnsiString _seria,
+                 AnsiString _model, AnsiString _size, AnsiString _material,AnsiString _voltage, AnsiString _power,
+                  AnsiString _current, AnsiString _efficiencyClass,
+                 AnsiString _controlType,  AnsiString _additionalCommunication,AnsiString _numberProgram,
+                 AnsiString  _portability,AnsiString _waterConsumtion,AnsiString _drying,AnsiString _loadingType);
+         DishWasher& operator =(const DishWasher &other);
+         AnsiString getWaterConsumtion();
+         AnsiString getDrying();
+         AnsiString getLoadingType();
+
+         void setWaterConsumtion(AnsiString _waterConsumtion);
+         void setDrying(AnsiString _drying);
+         void setLoadingType(AnsiString _loadingType);
+         void setDifferentProp(AnsiString _waterConsumtion,AnsiString _drying,AnsiString _loadingType);
+       AnsiString* Arr(int flag);
+};
+
+class Fridge : public HouseholdAppliance {
+        protected:
+                AnsiString numOfCameras;
+                AnsiString defrosting;
+                AnsiString numOfDoor;
+        public:
+
+                Fridge(AnsiString _cost,
+                AnsiString _manufacturer, AnsiString _name, AnsiString _type, AnsiString _quantity, AnsiString _date,
+                 AnsiString _seria,
+                 AnsiString _model, AnsiString _size, AnsiString _material,AnsiString _voltage,
+                 AnsiString _power, AnsiString _current, AnsiString _efficiencyClass,
+                 AnsiString _controlType,  AnsiString _additionalCommunication,AnsiString _numberProgram,
+                  AnsiString  _portability,AnsiString _numOfCameras,AnsiString _defrosting,AnsiString _numOfDoor);
+
+                AnsiString getNumOfCameras();
+
+                AnsiString getDefrosting();
+
+                AnsiString getNumOfDoor();
+
+                void setNumOfCameras(AnsiString _numOfCameras);
+                Fridge& operator =(const Fridge &other);
+
+                void setDefrosting(AnsiString _defrosting);
+
+                void setNumOfDoor(AnsiString _numOfDoor);
+                 void setDifferentProp(AnsiString _numOfCameras,AnsiString _defrosting,AnsiString _numOfDoor);
+               AnsiString* Arr(int flag);
+};
+
+class Juicer : public HouseholdAppliance{
+   protected:
+         AnsiString dripStop;
+         AnsiString juiceIndicator;
+         AnsiString rotationalSpeed;
+   public:
+
+         Juicer(AnsiString _cost,
+                AnsiString _manufacturer, AnsiString _name, AnsiString _type, AnsiString _quantity, AnsiString _date,
+                 AnsiString _seria,
+                 AnsiString _model, AnsiString _size, AnsiString _material,AnsiString _voltage, AnsiString _power,
+                 AnsiString _current, AnsiString _efficiencyClass,
+                 AnsiString _controlType,
+                 AnsiString _additionalCommunication,AnsiString _numberProgram,
+                  AnsiString  _portability,AnsiString _dripStop,AnsiString _juiceIndicator,AnsiString _rotationalSpeed);
+
+
+         AnsiString getDripStop();
+         AnsiString getJuiceIndicator();
+         AnsiString getRotationalSpeed();
+
+           Juicer& operator =(const Juicer &other);
+
+         void setDripStop(AnsiString _dripStop);
+         void setJuiceIndicator(AnsiString _juiceIndicator);
+         void setRotationalSpeed(AnsiString _rotationalSpeed);
+          void setDifferentProp(AnsiString _dripStop,AnsiString _juiceIndicator,AnsiString _rotationalSpeed);
+         AnsiString* Arr(int flag);
+};
+
+
+class Microwave : public HouseholdAppliance {
+   protected:
+         AnsiString radiationPower;
+         AnsiString grill;
+         AnsiString opening;
+   public:
+
+         Microwave(AnsiString _cost,
+                AnsiString _manufacturer, AnsiString _name, AnsiString _type, AnsiString _quantity, AnsiString _date,
+                 AnsiString _seria,
+                 AnsiString _model, AnsiString _size,
+                  AnsiString _material,AnsiString _voltage, AnsiString _power, AnsiString _current, AnsiString _efficiencyClass,
+                 AnsiString _controlType,  AnsiString _additionalCommunication,AnsiString _numberProgram,
+                 AnsiString  _portability,AnsiString _radiationPower,AnsiString _grill,AnsiString _opening);
+
+
+         AnsiString getRadiationPower();
+         AnsiString getGrill();
+         AnsiString getOpening();
+
+           Microwave& operator =(const Microwave &other);
+
+         void setRadiationPower(AnsiString _radiationPower);
+         void setGrill(AnsiString _grill);
+         void setOpening(AnsiString _opening);
+         void setDifferentProp(AnsiString  _radiationPower,AnsiString _grill,AnsiString _opening);
+          AnsiString* Arr(int flag);
+};
+class Stove : public HouseholdAppliance{
+        protected:
+               AnsiString burner;
+               AnsiString convection;
+               AnsiString cooktop;
+        public:
+
+               Stove(AnsiString _cost,
+                AnsiString _manufacturer, AnsiString _name, AnsiString _type, AnsiString _quantity, AnsiString _date,
+                AnsiString _seria,
+                 AnsiString _model, AnsiString _size, AnsiString _material,
+                 AnsiString _voltage, AnsiString _power, AnsiString _current, AnsiString _efficiencyClass,
+                 AnsiString _controlType,  AnsiString _additionalCommunication,
+                 AnsiString _numberProgram, AnsiString  _portability,AnsiString _burner,AnsiString _convection, AnsiString _cooktop);
+
+               AnsiString getBurner();
+               AnsiString getConvection();
+               AnsiString getCooktop();
+
+ Stove& operator =(const Stove &other);
+               void setBurner(AnsiString _burner);
+               void setConvection(AnsiString _convection);
+               void setCooktop(AnsiString _cooktop);
+               void setDifferentProp(AnsiString  _burner,AnsiString _convection,AnsiString _cooktop);
+               AnsiString* Arr(int flag);
+};
+
+
+
+
+
+
+#endif

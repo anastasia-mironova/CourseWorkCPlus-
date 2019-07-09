@@ -1,0 +1,50 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+//---------------------------------------------------------------------------
+USEFORM("MainUnit.cpp", MainForm);
+USEFORM("Unit2.cpp", addForm);
+USEFORM("Unit3.cpp", searchForm);
+USEFORM("Unit4.cpp", editForm);
+USEFORM("Unit1.cpp", AboutBox);
+USEFORM("Unit5.cpp", startPage);
+USEFORM("Unit7.cpp", newAdmin);
+USEFORM("Unit6.cpp", helpF);
+//---------------------------------------------------------------------------
+WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
+{
+        try
+        {
+
+
+             Application->Initialize();
+                 Application->CreateForm(__classid(TMainForm), &MainForm);
+                 Application->CreateForm(__classid(TaddForm), &addForm);
+                 Application->CreateForm(__classid(TsearchForm), &searchForm);
+                 Application->CreateForm(__classid(TeditForm), &editForm);
+                 Application->CreateForm(__classid(TAboutBox), &AboutBox);
+                 Application->CreateForm(__classid(TstartPage), &startPage);
+                 Application->CreateForm(__classid(TnewAdmin), &newAdmin);
+                 Application->CreateForm(__classid(ThelpF), &helpF);
+                 Application->Run();
+
+        }
+        catch (Exception &exception)
+        {
+                 Application->ShowException(&exception);
+        }
+        catch (...)
+        {
+                 try
+                 {
+                         throw Exception("");
+                 }
+                 catch (Exception &exception)
+                 {
+                         Application->ShowException(&exception);
+                 }
+        }
+        return 0;
+}
+//---------------------------------------------------------------------------
